@@ -1,6 +1,7 @@
 // api key: 285841-6b80b863a4aaf11d4dab01bf0
 const baseurl = "https://pixabay.com/api/?key=285841-6b80b863a4aaf11d4dab01bf0";
 const search_box = document.getElementById("search-box");
+var image_index = 0;
 
 // Search box event listener
 const keyup_f = () => {
@@ -17,7 +18,7 @@ const keyup_f = () => {
 		// Format results
 		let DOM_Node = document.getElementById("content");
 		setBackgroundImage(json.hits[0]);
-		createImageDOM(json.hits, DOM_Node);
+		setImageMeta(json.hits[0]);
 
 
     };
@@ -34,16 +35,15 @@ search_box.addEventListener('keyup', keyup_f);
 
 const setBackgroundImage = (jsonImage) => {
 	let imageDOM = document.getElementById('mainImage');
-	//imageDOM.classList.add('img-fluid');
 	imageDOM.src = jsonImage.largeImageURL;
 }
 
-const createImageDOM = (jsonImgArray, DOM_Node) => {
-	DOM_Node.innerHTML = '';
-	jsonImgArray.forEach(jsonImg => {
-		let imageDOM = document.createElement('img');
-		imageDOM.src = jsonImg.previewURL;
-		imageDOM.classList.add('img-fluid');
-		DOM_Node.appendChild(imageDOM);
-	});
+const setImageMeta = (jsonImage) => {
+	let str = "Views: " + jsonImage.views.toLocaleString();
+	str += " | By: " + jsonImage.user;
+	str += " | Tags: " + jsonImage.tags;
+	str += ' | <a target="new" href="' + jsonImage.pageURL + '">View Original</a>';
+
+	let DOM_Node = document.getElementById('imageMeta');
+	DOM_Node.innerHTML = str;
 }
