@@ -17,10 +17,11 @@ body {
         -webkit-transition: opacity 0.3s ease-in-out;
 }
 #mainImage {
-	position: absolute;
-
-	min-width: 100vw;
-	min-height: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    min-width: 100vw;
+    min-height: 100vw;
 }
 #search {
 	position: absolute;
