@@ -4,13 +4,17 @@
 
 
 body {
-	background-color: rgb(240,240,240);
+	background-color: black;
 }
 #imageWrapper {
 	position: relative;
 	width: 100%;
 	height: 100vh;
 	overflow: hidden;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -webkit-transition: opacity 0.3s ease-in-out;
 }
 #mainImage {
 	position: absolute;
@@ -25,7 +29,7 @@ body {
 	top: 35vh;
 	width: 80vw;
 	padding: 3em 1.5em;
-	background: rgba(240,240,240, 0.6);
+	background: rgba(240,240,240, 0.75);
 	border-radius: 1em;
 }
 #search-box {
@@ -41,6 +45,7 @@ body {
 	width: 100%;
 	text-align: center;
 	font-weight: 500;
+        text-shadow: 1px 1px 9px rgba(240, 240, 240, 1);
 }
 #content {
 	display: flex;
@@ -53,6 +58,10 @@ body {
 	bottom:0;
 	width: 100vw;
 	height: 2em;
+        background-color: #333;
+}
+.footer a:hover, .footer a {
+    color: #ccc;
 }
 
 @font-face {
@@ -104,4 +113,7 @@ body {
 #previous:hover, #next:hover {
     background-color: white;
     cursor: pointer;
+}
+.faded {
+    opacity: 0.4 !important;
 }
