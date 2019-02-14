@@ -20,8 +20,6 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    min-width: 100vw;
-    min-height: 100vw;
 }
 #search {
 	position: absolute;
