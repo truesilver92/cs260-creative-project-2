@@ -24,12 +24,14 @@ body {
 	right: 10vw;
 	top: 35vh;
 	width: 80vw;
-	padding: 3em;
+	padding: 3em 1.5em;
 	background: rgba(240,240,240, 0.6);
 	border-radius: 1em;
 }
 #search-box {
-	padding: .5em;
+    padding: .5em;
+    margin-left: 1em;
+    margin-right: 1em;
 	border-radius: 0.5em;
 	border-collapse: collapse;
 	border: 1px #CCC solid;
@@ -51,4 +53,55 @@ body {
 	bottom:0;
 	width: 100vw;
 	height: 2em;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2c5x6t');
+  src:  url('fonts/icomoon.eot?2c5x6t#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2c5x6t') format('truetype'),
+    url('fonts/icomoon.woff?2c5x6t') format('woff'),
+    url('fonts/icomoon.svg?2c5x6t#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-circle-right:before {
+  content: "\ea42";
+}
+.icon-circle-left:before {
+  content: "\ea44";
+}
+
+#arrowInput {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+#previous, #next {
+    font-size: 2rem;
+    align-self: center;
+    color: #999;
+    padding: 0.25em;
+    background-color: rgba(240,240,240,0.75);
+    border-radius: 0.25em;
+}
+#previous:hover, #next:hover {
+    background-color: white;
+    cursor: pointer;
 }
